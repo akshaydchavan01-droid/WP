@@ -1,0 +1,4 @@
+echo "For Amazon node"
+yum update -y
+echo "Java Install"
+yum install java-17-amazon-corretto-devel -y
