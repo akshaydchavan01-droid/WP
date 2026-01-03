@@ -1,0 +1,6 @@
+cd ..
+cd ..
+git clone https://github.com/akshaydchavan01-droid/WP.git
+cd WP
+chmod 755 Jenkins
+./Jenkins
