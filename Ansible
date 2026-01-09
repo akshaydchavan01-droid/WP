@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+echo "Updating system packages..."
+sudo apt update -y
+
+echo "Installing Python and required packages..."
+sudo apt install -y \
+  python3 \
+  python3-pip \
+  python3-venv \
+  software-properties-common
+
+echo "Setting python3 as default python..."
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+
+echo "Upgrading pip..."
+python3 -m pip install --upgrade pip
+
+echo "Adding Ansible repository..."
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+
+echo "Installing Ansible..."
+sudo apt install -y ansible
+
+echo "Verifying installations..."
+python --version
+pip --version
+ansible --version
+
+echo "Python and Ansible installation completed successfully!"
